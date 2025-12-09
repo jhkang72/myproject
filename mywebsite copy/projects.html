@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Projects · Jihee Kang</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sora:wght@400;600&display=swap');
+  :root{
+    --ink:#0f172a; --muted:#475569;
+    --blue:#CFEFBA;
+    --blue-ink:#1f6fd1;
+    --yellow:#ffd84d;
+    --card:#fff;
+    --radius:18px; 
+    --shadow:0 14px 36px rgba(15,23,42,.10);
+    --bg-intensity:.6; 
+    --glow-enabled:1;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+
+  body{
+    margin:0;
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    color:var(--ink);
+    background:var(--blue);
+    min-height:100vh;
+    display:flex;              
+    flex-direction:column;
+    overflow-x:hidden;
+  }
+
+  .glow{
+    position:fixed; inset:auto -10vmax 12% auto; width:55vmax; height:55vmax; border-radius:50%;
+    background: radial-gradient(closest-side, rgba(255,216,77,var(--bg-intensity)), transparent 70%);
+    pointer-events:none; z-index:-1; filter:blur(30px); mix-blend-mode:multiply; opacity:var(--glow-enabled);
+  }
+
+  header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px); background:rgba(255,255,255,.75); border-bottom:1px solid rgba(15,23,42,.06)}
+  .nav{max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+  .brand .dot{width:12px; height:12px; border-radius:999px; background:var(--yellow); box-shadow:0 0 0 4px rgba(255,216,77,.35)}
+  nav a{color:var(--muted); text-decoration:none; font-weight:700; margin-left:18px; padding:8px 12px; border-radius:12px}
+  nav a:hover,nav a:focus{background:rgba(255,216,77,.25)}
+
+  main{flex:1}
+
+  .container{max-width:1100px; margin:0 auto; padding:48px 20px}
+  .section-title{
+    font-size:35px;
+    margin:0 0 8px;
+    text-align:center;             /* ✅ centered title */
+  }
+  .section-sub{
+    color:var(--muted);
+    margin:0 0 28px;
+    text-align:center;             /* ✅ centered subtitle */
+  }
+
+  .projects-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px}
+  .tile{
+    position:relative; display:block; text-decoration:none; color:inherit;
+    border-radius:var(--radius); padding:20px;
+    background:linear-gradient(180deg,#fff,#f7fbff);
+    border:1px solid rgba(15,23,42,.06); box-shadow:var(--shadow);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .tile:hover{box-shadow:0 18px 35px rgba(15,23,42,.15)}
+  .icon{
+    width:56px; height:56px; border-radius:14px; display:grid; place-items:center;
+    background:linear-gradient(145deg,#fff,#f8faff); border:1px solid rgba(15,23,42,.06);
+    margin-bottom:12px; overflow:hidden;
+  }
+  .icon svg{width:28px; height:28px}
+  .tile h4{margin:4px 0 6px; font-weight:700}
+  .tile p{margin:0; color:var(--muted)}
+  .badge-live{
+    position:absolute; right:14px; top:14px; font-size:12px;
+    background:var(--yellow); padding:4px 8px; border-radius:999px; font-weight:800
+  }
+  .peek{
+    position:absolute; left:0; right:0; bottom:0; height:4px;
+    background:linear-gradient(90deg, var(--blue-ink), var(--yellow));
+    opacity:0; transition:opacity .2s ease;
+    border-bottom-left-radius:var(--radius); border-bottom-right-radius:var(--radius);
+  }
+  .tile:hover .peek{opacity:.85}
+
+  footer{background:#0f172a; color:#e2e8f0}
+  .footer-inner{max-width:1100px; margin:0 auto; padding:28px 20px; display:flex; align-items:center; justify-content:space-between}
+</style>
+</head>
+<body>
+  <div class="glow" id="glow"></div>
+
+  <header>
+    <div class="nav">
+      <div class="brand"><span class="dot"></span><span>Jihee Kang</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" style="background:rgba(255,216,77,.25)">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub"></p>
+
+    <div class="projects-grid">
+      <!-- Project 1 - Website -->
+      <a class="tile" href="https://github.com/jhkang72/filmpremiere.git" target="_blank" rel="noopener">
+        <span class="badge-live">LIVE</span>
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0c2.5 0 4.5 4.5 4.5 10S14.5 22 12 22m0-20c-2.5 0-4.5 4.5-4.5 10s2 10 4.5 10M2 12h20" stroke="#111827" stroke-width="1.5"/>
+</svg>
+        </div>
+        <h4>Project 1</h4>
+        <p>Website</p>
+        <span class="peek"></span>
+      </a>
+
+      <!-- Project 2 - Comic -->
+      <a class="tile" href="https://mam10533-sketch.github.io/Comics-Project2/" target="_blank" rel="noopener">
+        <span class="badge-live">LIVE</span>
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 014.5 11.5a8.5 8.5 0 018.5-8.5 8.5 8.5 0 018 8.5z" stroke="#111827" stroke-width="1.5"/>
+</svg>
+        </div>
+        <h4>Project 2</h4>
+        <p>Comic</p>
+        <span class="peek"></span>
+      </a>
+
+      <!-- Global Café Instagram -->
+      <a class="tile" href="https://izzatirmizi.github.io/commlab.soundproject/html/" target="_blank" rel="noopener" aria-label="Global Café Instagram">
+        <span class="badge-live">LIVE</span>
+        <div class="icon" aria-hidden="true">
+       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 00-1.5-3.4m3 6.4a7.5 7.5 0 00-2.5-5.5m3.5 8.5a10.5 10.5 0 00-3.5-8.5" stroke="#111827" stroke-width="1.5"/>
+</svg>
+        </div>
+        <h4>Project 3</h4>
+        <p>Sound</p>
+        <span class="peek"></span>
+      </a>
+
+            <!-- Global Café Instagram -->
+      <a class="tile" href="https://ah-alavi.github.io/Video_Project/" target="_blank" rel="noopener" aria-label="Global Café Instagram">
+        <span class="badge-live">LIVE</span>
+        <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <path d="M3 6.75V8.5h18V6.75a1.25 1.25 0 00-1.25-1.25H4.25A1.25 1.25 0 003 6.75zM3 10h18v7.25A1.25 1.25 0 0119.75 18.5H4.25A1.25 1.25 0 013 17.25V10z" stroke="#111827" stroke-width="1.5"/>
+  <path d="M7 10V5M12 10V5M17 10V5" stroke="#111827" stroke-width="1.5"/>
+</svg>
+        </div>
+        <h4>Project 4</h4>
+        <p>Film</p>
+        <span class="peek"></span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Jihee Kang. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const glow = document.getElementById('glow');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY || 0;
+    glow.style.transform = `translate(${(y*0.12)}px, ${(y*0.18)}px)`;
+  }, {passive:true});
+</script>
+</body>
+</html>
